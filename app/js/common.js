@@ -1,5 +1,37 @@
 $(function() {
 
+//------------------------------reviews-slider-----------------------------
+  var swiper = new Swiper('.reviews__slider', {
+    slidesPerView: 1,
+    spaceBetween: 90,
+    loop: true,
+    lazy: true,
+    pagination: {
+      el: '.reviews__pagination',
+      clickable: true,
+    },
+  });
+
+//------------------------------reviews-slider-----------------------------
+  var swiper = new Swiper('.team__slider', {
+    slidesPerView: 4,
+    spaceBetween: 15,
+    loop: true,
+    lazy: true,
+    pagination: {
+      el: '.team__pagination',
+      clickable: true,
+    },
+    breakpoints: {
+    992: {
+      slidesPerView: 3,
+    },
+    480: {
+      slidesPerView: 2,
+    }
+    }
+  });
+
 //------------------------------acardeon---------------------------
   $(".block__content").slideUp("slow");
   $(".active .block__content").slideDown("slow");
@@ -135,20 +167,3 @@ $(function() {
   // $(window).on('load', function(){
   //   $('.preloader').delay(1000).fadeOut('slow');
   // });
-
- 	var bLazy = new Blazy({
-    breakpoints: [{
-	  width: 578 // Max-width
-    , src: 'data-src-small'
-	}]
-      , success: function(element){
-	    setTimeout(function(){
-		// We want to remove the loader gif now.
-		// First we find the parent container
-		// then we remove the "loading" class which holds the loader image
-		var parent = element.parentNode;
-		parent.className = parent.className.replace(/\bloading\b/,'');
-	    }, 200);
-        }
-   });
-	
