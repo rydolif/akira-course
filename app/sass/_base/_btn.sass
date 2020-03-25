@@ -1,0 +1,25 @@
+.btn
+	position: relative
+	display: flex
+	justify-content: center
+	align-items: center
+	height: 50px
+	border-radius: 15px
+	background-color: $accent
+	max-width: fit-content
+	min-width: 270px
+	padding: 0
+	text-transform: uppercase
+	font-family: $fonts--title
+	font-size: 18px
+	color: #fff
+	font-weight: 700
+
+	+r(1200)
+		height: 40px
+		font-size: 14px
+
+	&:hover,
+	&:focus
+		background: $hover
+		color: #fff
