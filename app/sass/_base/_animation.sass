@@ -1,14 +1,36 @@
 // animation: hover-back .3s linear 1 forwards
+// animation: pulse-inner .8s ease-in infinite
 
-// //----------------hover-img---------------
-// @keyframes slide-hover
-// 	0%
-// 		transform: scale(1)
-// 	100%
-// 		transform: scale(1.4)
+//----------------hover-img---------------
+@keyframes circle
+	0%
+		transform: translate(-50%, -50%) rotate(0)
 
-// @keyframes slide-hover-back
-// 	0%
-// 		transform: scale(1.4)
-// 	100%
-// 		transform: scale(1)
+	100%
+		transform: translate(-50%, -50%) rotate(360deg)
+
+@keyframes pulse-inner
+	0%
+		opacity: 0
+		transform: scale(.7)
+
+	50%
+		opacity: .6
+		transform: scale(1)
+	
+	100%
+		opacity: 0
+		transform: scale(1.6)
+
+@keyframes pulse-outer
+	0%
+		opacity: 0
+		transform: scale(.7)
+
+	50%
+		opacity: .6
+		transform: scale(1)
+	
+	100%
+		opacity: 0
+		transform: scale(1.6)
