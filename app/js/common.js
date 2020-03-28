@@ -6,7 +6,7 @@ $(function() {
     spaceBetween: 60,
     lazy: true,
     autoplay: {
-      delay: 3500,
+      delay: 4500,
       disableOnInteraction: false,
     },
     pagination: {
@@ -30,7 +30,7 @@ $(function() {
       clickable: true,
     },
     autoplay: {
-      delay: 3500,
+      delay: 4500,
       disableOnInteraction: false,
     },
   });
@@ -46,7 +46,7 @@ $(function() {
       clickable: true,
     },
     autoplay: {
-      delay: 3500,
+      delay: 4500,
       disableOnInteraction: false,
     },
   });
@@ -62,7 +62,7 @@ $(function() {
       clickable: true,
     },
     autoplay: {
-      delay: 3500,
+      delay: 4500,
       disableOnInteraction: false,
     },
     breakpoints: {
@@ -82,7 +82,7 @@ $(function() {
     lazy: true,
     effect: 'fade',
     autoplay: {
-      delay: 3500,
+      delay: 4500,
       disableOnInteraction: false,
     },
     pagination: {
