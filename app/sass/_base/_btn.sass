@@ -15,6 +15,9 @@
 	color: #fff
 	font-weight: 700
 
+	+r(1440)
+		padding: 0 15px
+
 	+r(1200)
 		height: 40px
 		font-size: 14px
@@ -23,3 +26,13 @@
 	&:focus
 		background: $hover
 		color: #fff
+	
+	&--whatsapp
+		background-color: #48a91f
+
+		img
+			width: 22px
+			margin-right: 20px
+
+			+r(480)
+				display: none
