@@ -6,10 +6,13 @@
 	margin: 20px 0
 	z-index: 1
 
+	+r(992)
+		max-width: 80vw
+
 	&__close
 		position: absolute
-		right: -15px
-		top: -15px
+		right: -45px
+		top: 0
 		display: block
 		width: 40px
 		height: 40px
@@ -19,6 +22,13 @@
 		transition: all .6s
 		background-color: #fff
 		z-index: 111
+		box-shadow: 0 0 10px 0 rgba($accent, .5)
+
+		+r(480)
+			right: 5px
+			top: 5px
+			width: 30px
+			height: 30px
 
 		&:hover,
 		&:focus
@@ -124,5 +134,151 @@
 		span
 			transform: translate(-30%, -50%) rotate(-45deg)
 
+	&--olimpia
+		background-color: #fff
+		max-width: 640px
+		border-right: 2px solid $gray
+		border-bottom: 2px solid $gray
+		border-radius: 30px
+
+		+r(1440)
+			max-width: 500px
+
+		+r(576)
+			max-width: 460px
+
+		+r(480)
+			padding-top: 30px
+			border-radius: 15px
+
+		+r(460)
+			max-width: 320px
+
+		&__acardeon
+			border-bottom: 2px solid $gray
+
+			&:last-child
+				border: none
+
+			&_header
+				+pseudo
+				+transition
+				display: flex
+				align-items: center
+				cursor: pointer
+				padding: 50px 100px
+				font-weight: 800
+				text-decoration: underline
+
+				+r(1440)
+					padding: 50px
+
+				+r(992)
+					padding: 30px
+
+				+r(480)
+					padding: 15px !important
+
+				&::before
+					+transition
+					right: 80px
+					top: 50%
+					border-bottom: 7px solid transparent
+					border-left: 4px solid transparent
+					border-right: 4px solid transparent
+					border-top: 7px solid $accent
+					opacity: 0
+
+					+r(1440)
+						right: 30px
+
+				&:hover,
+				&:focus
+					color: $accent
+
+					&::before
+						opacity: 1
+
+				p
+					max-width: 310px
+					font-size: 14px
+
+					+r(480)
+						max-width: 70%
+
+			&_icon
+				display: flex
+				justify-content: center
+				align-items: center
+				background-color: $accent
+				width: 50px
+				height: 50px
+				border-radius: 15px
+				margin-right: 60px
+
+				+r(1440)
+					margin-right: 20px
+
+				+r(1200)
+					width: 30px
+					height: 30px
+					border-radius: 10px
+					margin-right: 15px
+
+				img
+					width: 40%
+
+					+r(1200)
+						width: 18px
+
+			&_content
+				padding: 
+					left: 100px
+					right: 100px
+					bottom: 35px
+
+				+r(1440)
+					padding: 
+						left: 40px
+						right: 40px
+						bottom: 30px
+
+				+r(992)
+					padding: 
+						left: 30px
+						right: 30px
+						bottom: 30px
+
+				+r(480)
+					padding: 
+						left: 15px
+						right: 15px
+						bottom: 15px
+
+			&_line
+				margin-bottom: 25px
+
+				+r(1200)
+					margin-bottom: 15px
+
+			&_btn
+				display: flex
+				justify-content: flex-end
+
+			.btn
+				+r(480)
+					max-width: 100%
+					min-width: 100%
+					width: 100%
+
+		.active
+			.modal--olimpia__acardeon_header
+				padding-bottom: 30px
+
+				&::before
+					top: 40%
+					border-top: 7px solid transparent
+					border-bottom: 7px solid $accent
+					opacity: 1
 
 

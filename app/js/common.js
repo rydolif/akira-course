@@ -1,5 +1,22 @@
 $(function() {
 
+//-----------------------------modal-acardeon-olimp--------------------------
+  $(".acardeon__content").slideUp("slow");
+  $(".active .acardeon__content").slideDown("slow");
+
+  $(".acardeon__header").on("click", function(){
+    if ($(this).parent().hasClass('active')) {
+      $(this).parent().removeClass('active');
+      $(".acardeon__content").slideUp("slow");
+    }
+    else {
+      $(".active .acardeon__content").slideUp("slow");
+      $(".active").removeClass('active');
+      $(this).parent().addClass('active');
+      $(".active .acardeon__content").slideDown("slow");
+    }
+  });
+
 //------------------------------modal-slider-gallery----------------------------
   var swiper = new Swiper('.modal__slider', {
     slidesPerView: 1,

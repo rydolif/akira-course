@@ -16,7 +16,7 @@ h1
 		font-size: 34px
 
 	+r(1440)
-		font-size: 30px
+		font-size: 28px
 		margin-bottom: 15px
 
 	+r(767)
@@ -369,14 +369,14 @@ h3
 		+pseudo
 
 		&::before
+			+transition
 			right: 5px
 			top: 25px
 			border-bottom: 7px solid transparent
 			border-left: 4px solid transparent
 			border-right: 4px solid transparent
 			border-top: 7px solid $accent
-			+transition
-
+			
 		&:hover,
 		&:focus
 			&::before
@@ -639,6 +639,9 @@ h3
 .hero
 	padding: 5vh 0
 
+	&::before
+		display: none
+
 	h2
 		margin-bottom: 15px
 
@@ -649,7 +652,7 @@ h3
 		+r(767)
 			margin-bottom: 0
 
-	+r(1200)
+	+r(1440)
 		padding: 30px 0
 		min-height: 50vh
 		height: auto
@@ -657,27 +660,6 @@ h3
 	+r(767)
 		min-height: auto
 
-	&::before
-		border-bottom-right-radius: 180px
-
-		+r(1750)
-			right: auto
-			left: 60vw
-
-		+r(1440)
-			left: 50%
-			height: 70%
-			border-bottom-left-radius: 10px
-
-		+r(1200)
-			height: 70%
-		
-		+r(992)
-			left: 60%
-
-		+r(767)
-			display: none
-	
 	&__container
 		+between
 
@@ -689,6 +671,7 @@ h3
 		padding-left: 50px
 		margin-bottom: 10vh
 		line-height: 1.6
+		z-index: 2
 
 		+r(1750)
 			width: 40%
@@ -787,10 +770,12 @@ h3
 				color: $accent
 
 	&__img
+		+pseudo
 		position: relative
 		width: 50%
 		height: 90vh
 		top: 0
+		z-index: 1
 
 		+r(1750)
 			width: 60%
@@ -813,23 +798,60 @@ h3
 			margin-bottom: 25px
 			padding-top: 10px
 
+		&::before
+			top: 0
+			left: 70px
+			display: block
+			width: 60vw
+			background-color: $accent
+			background: linear-gradient(90deg, rgba(144,71,192,1) 0%, rgba(#9247c3,1) 100%)
+			height: 100%
+			border-top-left-radius: 180px
+			border-bottom-left-radius: 30px
+			border-bottom-right-radius: 180px
+	
+			+r(1440)
+				left: 30%
+				border-bottom-left-radius: 10px
+			
+			+r(992)
+				left: 20%
+				top: auto
+				bottom: 0
+				height: 120%
+
+			+r(767)
+				display: none
+				left: 0
+				top: 50%
+				width: 100vw
+				border-top-right-radius: 180px
+
 		img
 			position: absolute
 			left: -65px
 			bottom: 0
-			height: 100%
+			height: 120%
 
 			+r(1750)
 				position: relative
 				left: 0
 				max-width: 100%
-				height: auto
+				height: 100%
+				padding-top: 6%
 
 			+r(1440)
 				left: 45px
+				width: 100%
 
 			+r(992)
 				left: -35px
+				padding-top: 0
+				top: auto
+				bottom: 0
+				height: 100%
+				max-width: 120%
+				width: 120%
 
 			+r(767)
 				position: relative
@@ -1094,6 +1116,64 @@ h3
 					height: 18px
 					margin-right: 5px
 					width: 15px
+	
+	&--olimp
+
+		&__text
+			font-weight: 800
+			font-size: 16px !important
+			margin-bottom: 40px
+
+			+r(1440)
+				margin-bottom: 30px
+
+			+r(992)
+				margin-bottom: 15px
+				font-size: 14px !important
+
+		&__list
+
+			li
+				padding-left: 30px
+
+				+r(768)
+					display: flex
+					justify-content: flex-start
+					padding-left: 0
+					width: 100%
+					max-width: 360px
+					margin: 0 auto
+					text-align: left
+
+				+r(480)
+					font-size: 12px
+
+				&::before
+					display: none
+
+			span
+				+pseudo
+				position: absolute
+				left: 0
+				top: 4px
+				display: block
+				width: 15px
+				height: 15px
+				border-radius: 50%
+				background-color: $accent
+
+				&::before
+					left: 40%
+					top: 44%
+					height: 8px
+					width: 4px
+					border-bottom: 1px solid #fff
+					border-right: 1px solid #fff
+					transform: translate(0, -50%) rotate(45deg)
+
+				+r(768)
+					position: relative
+					margin-right: 5px
 
 
 .cabinet
@@ -2929,9 +3009,6 @@ h3
 		display
 		display: flex
 		justify-content: center
-
-
-
 
 
 .footer
