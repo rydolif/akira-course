@@ -1203,6 +1203,9 @@ h3
 
 			+r(767)
 				margin-bottom: 25px
+				
+				br
+					display: none
 
 			+r(480)
 				margin-bottom: 15px
@@ -3198,7 +3201,25 @@ h3
 
 
 .info
-	padding-bottom: 40px	
+	+pseudo
+	padding-bottom: 40px
+
+	&::before,
+	&::after
+		z-index: -2
+
+		+r(992)
+			display: none
+
+	&::before
+		content: url(../img/bg--info__before.png)
+		bottom: 0
+		left: 0
+
+	&::after
+		content: url(../img/bg--info__after.png)
+		right: 0
+		top: 5vh
 
 	&__wrap
 		+pseudo
@@ -3381,6 +3402,7 @@ h3
 	&__btn
 		display: flex
 		justify-content: center
+
 
 .footer
 	padding: 20px
