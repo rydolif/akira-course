@@ -268,25 +268,21 @@ h3
 			height: auto
 
 	&__list
+		+last
 		margin-bottom: 5vh
 		padding: 0 8px
 
 		+r(1200)
 			font-size: 12px
 
-		&:last-child
-			margin-bottom: 0
-
 		li, span, b, svg
 			+transition
 
 		li
+			+last
 			display: flex
 			flex-wrap: wrap
 			margin-bottom: 15px
-
-			&:last-child
-				margin-bottom: 0
 
 		p
 			cursor: pointer
@@ -343,10 +339,9 @@ h3
 			margin-left: 25px
 
 			li
+				+last
 				margin-bottom: 3px
 
-				&:last-child
-					margin-bottom: 0
 
 			a
 				padding: 5px 17px
@@ -426,6 +421,7 @@ h3
 		right: 15px
 
 	a
+		+last
 		overflow: hidden
 		display: flex
 		justify-content: center
@@ -444,9 +440,6 @@ h3
 		&:hover,
 		&:focus
 			background-color: $hover
-
-		&:last-child
-			margin-bottom: 0
 
 	svg
 		width: 22px
@@ -736,6 +729,7 @@ h3
 				margin-bottom: 0
 
 		li
+			+last
 			position: relative
 			margin-bottom: 5px
 			padding-left: 15px
@@ -753,9 +747,6 @@ h3
 
 				+r(767)
 					display: none
-
-			&:last-child
-				margin-bottom: 0
 
 		&_text
 			margin-bottom: 80px !important
@@ -894,6 +885,7 @@ h3
 			background-image: url(../img/check.png)
 
 		&_item
+			+last
 			width: 30%
 			line-height: 1.7
 
@@ -904,9 +896,6 @@ h3
 				width: 45%
 				margin-bottom: 15px
 				text-align: center
-
-				&:last-child
-					margin-bottom: 0
 			
 			+r(480)
 				width: 100%
@@ -1065,6 +1054,7 @@ h3
 				margin-bottom: 15px
 
 			p
+				+last
 				position: relative
 				margin-bottom: 30px
 				padding-left: 50px
@@ -1091,9 +1081,6 @@ h3
 
 				+r(480)
 					font-size: 12px
-
-				&:last-child
-					margin-bottom: 0
 				
 			span
 				overflow: hidden
@@ -1174,6 +1161,48 @@ h3
 				+r(768)
 					position: relative
 					margin-right: 5px
+	
+	&--child
+		+pseudo
+
+		&::after
+			content: url(../img/bg--hero-child.png)
+			right: 0
+			bottom: 0
+			z-index: -1
+
+		h1
+			font-size: 60px
+			color: $accent
+			margin-bottom: 55px
+			line-height: 1.4
+
+			+r(1200)
+				font-size: 44px
+				margin-bottom: 40px
+
+			+r(767)
+				margin-bottom: 25px
+				font-size: 36px
+
+				br
+					display: none
+
+			+r(480)
+				margin-bottom: 15px
+				font-size: 28px
+
+		h2
+			margin-bottom: 80px
+
+			+r(1200)
+				margin-bottom: 45px
+
+			+r(767)
+				margin-bottom: 25px
+
+			+r(480)
+				margin-bottom: 15px
 
 
 .cabinet
@@ -1268,6 +1297,7 @@ h3
 				font-size: 30px
 
 		&_item
+			+last
 			margin-bottom: 120px
 			color: $accent
 
@@ -1281,9 +1311,6 @@ h3
 				width: 48%
 				margin-bottom: 15px
 
-			&:last-child
-				margin-bottom: 0
-	
 	&__list
 		+between
 		align-items: flex-start
@@ -1604,6 +1631,7 @@ h3
 				line-height: 1.6
 
 			+r(767)
+				+last
 				position: relative
 				top: 0 !important
 				left: 0 !important
@@ -1611,9 +1639,6 @@ h3
 				max-width: 400px
 				margin: 0 auto 20px
 				text-align: center
-
-				&:last-child
-					margin-bottom: 0
 
 			&:nth-child(1)
 				top: -4%
@@ -1767,13 +1792,11 @@ h3
 					margin-top: 0
 
 			+r(992)
+				+last
 				width: 100%
 				margin-bottom: 25px
 				max-width: 360px
 				text-align: center
-
-				&:last-child
-					margin-bottom: 0
 
 				&:nth-child(2)
 					margin-top: 0
@@ -1898,10 +1921,8 @@ h3
 			width: 31%
 		
 		+r(578)
+			+last
 			margin-bottom: 10px
-
-			&:last-child
-				margin-bottom: 0
 
 		h3
 			font-size: 36px
@@ -2047,6 +2068,7 @@ h3
 
 	li
 		+pseudo
+		+last
 		position: relative
 		margin-bottom: 35px
 		padding-left: 25px
@@ -2070,9 +2092,6 @@ h3
 			top: 7px
 			left: 6px
 			transform: rotate(45deg)
-
-		&:last-child
-			margin-bottom: 0
 
 	&__wrap
 		+between
@@ -2221,6 +2240,124 @@ h3
 				+r(767)
 					display: none
 				
+	&--child
+		padding: 0
+		margin-top: -120px
+
+		+r(1200)
+			margin-top: -40px !important
+
+		+r(993)
+			margin-top: 0 !important
+
+		h3
+			margin-bottom: 55px
+			font-size: 24px
+
+			+r(1440)
+				margin-bottom: 35px
+
+			+r(1200)
+				margin-bottom: 15px
+				font-size: 20px
+
+				br
+					display: none
+
+			+r(992)
+				font-size: 18px
+
+			+r(767)
+				font-size: 16px
+
+		li
+			margin-bottom: 75px
+
+			+r(1440)
+				margin-bottom: 45px
+
+			+r(1200)
+				margin-bottom: 20px
+
+		p
+			line-height: 1.8
+
+			+r(1200)
+				line-height: 1.4
+
+		img
+			max-width: 100%
+
+		&__wrap
+			margin-bottom: 0
+
+			+r(767)
+				margin-bottom: 20px
+
+			ul
+				margin-left: 90px
+
+				+r(1200)
+					margin-left: 20px
+
+				+r(767)
+					margin-left: 0
+
+			&--bg
+				+pseudo
+
+				&::before
+					background-color: $gray
+					left: 0
+					top: 10%
+					height: 100%
+					width: 100%
+					z-index: -1
+					border-bottom-right-radius: 200px
+
+					+r(992)
+						border-bottom-right-radius: 100px
+						height: 90%
+
+			&--circle
+				&::after
+					content: url(../img/bg--circle.png)
+					left: 68%
+					top: 0
+					z-index: -1
+				
+		&__img
+			justify-content: flex-start
+
+			&_before
+				position: absolute
+				right: 20%
+				bottom: 0
+				z-index: -1
+		
+		&__top
+			margin-top: -60px
+
+		.result__wrap_img,
+		.result__wrap_content
+			width: 50%
+
+			+r(767)
+				width: 100%
+
+		.result__wrap_img
+			+r(767)
+				order: 1
+
+			img
+				+r(767)
+					display: block
+					max-width: 320px
+					margin: 0 auto
+
+				+r(360)
+					max-width: 100%
+
 
 .tariffs
 	+pseudo
@@ -2463,6 +2600,7 @@ h3
 					padding: 0 15px
 
 				li
+					+last
 					border-top: none
 					border-bottom: none !important
 					padding: 0
@@ -2472,9 +2610,6 @@ h3
 						content: '▶'
 						font-size: 10px
 						margin-right: 8px
-
-					&:last-child
-						margin-bottom: 0
 			
 			.btn
 				opacity: 0
@@ -2829,11 +2964,9 @@ h3
 			margin-bottom: 15px
 
 		+r(480)
+			+last
 			width: 100%
 			text-align: center
-
-			&:last-child
-				margin-bottom: 0
 
 
 .price
@@ -2905,14 +3038,11 @@ h3
 
 		&_line
 			+between
+			+last
 			margin-bottom: 5px
-
-			&:last-child
-				margin-bottom: 0
 
 			+r(480)
 				flex-direction: column
-
 
 		&_title
 			margin-bottom: 45px
@@ -3011,6 +3141,151 @@ h3
 		justify-content: center
 
 
+.info
+	padding-bottom: 40px	
+
+	&__wrap
+		+pseudo
+		padding: 40px 40px 130px
+
+		+r(1200)
+			padding: 30px 30px 60px
+
+		&::before,
+		&::after
+			z-index: -1
+
+		&::before
+			content: url(../img/info__before.png)
+			bottom: 0
+			left: 10%
+
+		&::after
+			top: 0
+			right: 0
+			left: 0
+			background-color: $gray
+			height: 150%
+
+	h2
+		margin-bottom: 60px
+		text-align: center
+
+		+r(1440)
+			margin-bottom: 40px
+
+		+r(1200)
+			margin-bottom: 20px
+
+	&__list
+		+between
+		line-height: 2
+
+		+r(1440)
+			line-height: 1.4
+
+		+r(767)
+			+around
+
+	&__item
+		&--child
+			width: 30%
+
+			+r(767)
+				+last
+				width: 45%
+				margin-bottom: 20px
+				min-width: 240px
+				text-align: center
+
+	&__icon
+		@extend .best__wrap_icon
+		margin-bottom: 55px
+
+		+r(1440)
+			margin-bottom: 30px
+
+		+r(1200)
+			margin-bottom: 15px
+
+		svg
+			width: 40%
+	
+	&__step
+		max-width: 930px
+		padding: 60px
+		margin: 0 auto
+		background-color: #fff
+		box-shadow: 10px 10px 20px 0 rgba($text, .3)
+
+		+r(1440)
+			padding: 40px
+
+		+r(1200)
+			padding: 30px
+
+		+r(767)
+			padding: 20px
+
+		&_item
+			+last
+			+pseudo
+			counter-increment: heading
+			margin-bottom: 90px
+			padding-left: 170px
+			line-height: 2
+
+			+r(1440)
+				line-height: 1.4
+
+			+r(1200)
+				margin-bottom: 40px
+
+			+r(767)
+				margin-bottom: 30px
+				padding-left: 100px
+
+			+r(480)
+				padding-left: 0
+				padding-top: 40px
+				text-align: center
+
+			&:before
+				content: "0" counter(heading)
+				left: 50px
+				top: 45%
+				transform: translate(0, -50%)
+				font-size: 48px
+				color: $accent
+
+				+r(767)
+					left: 35px
+					font-size: 40px
+
+				+r(480)
+					font-size: 36px
+					left: 50%
+					top: 0
+					transform: translate(-50%, 0)
+					line-height: 1
+				
+			&:after
+				content: url(../img/arrow.svg)
+				left: 0
+				top: 65%
+				width: 25px
+				transform: translate(0, -50%) rotate(90deg)
+
+				+r(767)
+					top: 50%
+					width: 20px
+
+				+r(480)
+					left: 30%
+					top: 10px
+					transform: translate(0, 0) rotate(90deg)
+
+
 .footer
 	padding: 20px
 	color: #fff
@@ -3037,25 +3312,22 @@ h3
 			margin-bottom: 10px
 
 	ul
+		+last
 		margin-bottom: 35px
 
 		+r(1200)
 			margin-bottom: 15px
 
 		&:last-child
-			margin-bottom: 0
-
 			+r(768)
 				margin-bottom: 20px
 
 	li
+		+last
 		margin-bottom: 10px
 
 		+r(1200)
 			margin-bottom: 5px
-
-		&:last-child
-			margin-bottom: 0
 
 	a
 		+pseudo
@@ -3106,9 +3378,8 @@ h3
 			width: 100%
 			text-align: center
 
-		&:last-child
-			+r(768)
-				margin-bottom: 0
+			&:last-child
+				margin-bottom: 0			
 
 		p
 			margin-bottom: 20px
