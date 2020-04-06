@@ -48,6 +48,7 @@ gulp.task('scripts', function() {
 		'app/libs/jquery.popupoverlay.js', 				//----модалки
 		'app/libs/fancybox/jquery.fancybox.js', 				//----модалки
 		'app/libs/swiper/swiper.min.js', 				//----модалки
+		'app/libs/jquery.spincrement.min.js', 				//----модалки
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
