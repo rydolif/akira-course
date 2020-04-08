@@ -130,63 +130,108 @@ h3
 
 
 .nav
+	+transition
 	position: fixed
 	top: 5vh
-	left: -245px
+	left: 10px
 	bottom: 5vh
 	display: flex
 	flex-direction: column
 	justify-content: space-between
 	width: 245px
 	height: 90vh
-	min-height: fit-content
 	max-height: 800px
-	overflow-x: auto
 	background-color: #fff
 	box-shadow: 5px 5px 15px 0 rgba($accent, .4)
 	border-radius: 20px
 	font-size: 14px
 	z-index: 1000
-	padding-bottom: 20px
-	+transition
+	padding-bottom: 10px
+	overflow: hidden
+
+	+r(1750)
+		width: 60px
+
+	+r(1580)
+		width: 245px
 
 	+r(1200)
 		width: 200px
-		left: -200px
 	
 	+r(480)
+		position: absolute
+		top: 20px
 		top: 3vh
 		bottom: 3vh
 		max-height: 700px
 		height: 94vh
 
-	&--active
-		left: 10px
+	div
+		&:nth-child(2)
+			min-height: 50%
 
-		+r(1440)
+			+rh(600)
+				overflow-x: auto
+
+		&:nth-child(3)
+			.nav__list
+				margin-bottom: 0
+
+	&--active
+		left: -265px
+
+		+r(1750)
+			left: 10px
+			width: 245px
+
+		+r(1580)
 			left: -245px
 
 		+r(1200)
 			left: -200px
+			width: 200px
 
-	&--menu
-		+r(1440)
-			left: 10px
+		.nav
+			&__logo
+				&_full
+					opacity: 1
+
+				&_min
+					opacity: 0
+		
+			&__list
+				b
+					+r(1750)
+						opacity: 1
+
+				ul
+					+r(1750)
+						opacity: 1
 
 	&__hamburger
 		+pseudo
+		+transition
 		position: fixed
 		display: block
-		width: 30px
-		height: 30px
+		width: 35px
+		height: 35px
 		background-color: #fff
 		border: none
 		border-radius: 50%
-		left: 265px
+		left: 15px
 		top: 6vh
 		box-shadow: 5px 5px 10px 0 rgba($accent, .4)
-		z-index: 1111
-		+transition
+		z-index: 1111	
+
+		+r(1750)
+			left: 260px
+
+		+r(1580)
+			left: 15px
+
+		+r(480)
+			position: absolute
+			top: 15px
 
 		&:hover
 			box-shadow: 5px 5px 15px 0 rgba($accent, .7)
@@ -214,54 +259,51 @@ h3
 			position: absolute
 			left: 36%
 			top: 50%
-			transform: translate(10%, -50%) rotate(-180deg)
+			transform: translate(-50%, -50%)
 			border-bottom: 4px solid transparent
 			border-left: 6px solid transparent
-			border-right: 6px solid $hover
+			border-right: 6px solid $accent
 			border-top: 4px solid transparent
 			+transition
+
+			+r(1580)
+				transform: translate(15%, -50%)
+				border-left: 6px solid $green
+				border-right: 6px solid transparent
 
 		&--active
 			left: 265px
 
-			+r(1440)
-				left: 15px
+			+r(1750)
+				left: 70px
 
-			span
-				transform: translate(-50%, -50%)
-				border-right: 6px solid $green
-
-				+r(1440)
-					border-right: 6px solid $hover
-					transform: translate(10%, -50%) rotate(-180deg)
-
-		&--menu
-			left: 15px
-
-			+r(1440)
-				left: 265px
+			+r(1580)
+				left: 260px
 
 			+r(1200)
-				left: 225px
+				left: 215px
 
 			span
-				transform: translate(10%, -50%) rotate(-180deg)
-				border-right: 6px solid $accent
+				transform: translate(15%, -50%)
+				border-left: 6px solid $green
+				border-right: 6px solid transparent
 
-				+r(1440)
+				+r(1580)
 					transform: translate(-50%, -50%)
-					border-right: 6px solid $green
-					
+					border-left: 6px solid transparent
+					border-right: 6px solid $accent
+
 	&__logo
+		position: relative
 		display: block
 		padding:
 			top: 20px
-			left: 20px
+			left: 15px
 			right: 20px
 		margin-bottom: 5vh
 		width: 190px
 
-		+r(1440)
+		+r(1750)
 			margin-bottom: 15px
 			width: 150px
 
@@ -272,9 +314,35 @@ h3
 				left: 10px
 				right: 10px
 
+		+r(767)
+			width: 100px
+			margin-bottom: 10px
+		
 		img
+			+transition
+
+		&_full
 			width: 100%
 			height: auto
+
+			+r(1750)
+				opacity: 0
+
+			+r(1580)
+				opacity: 1
+
+		&_min
+			position: absolute
+			left: 15px
+			top: 20px
+			width: 28px
+			opacity: 0
+
+			+r(1750)
+				opacity: 1
+
+			+r(1580)
+				opacity: 0
 
 	&__list
 		+last
@@ -291,6 +359,9 @@ h3
 		+r(992)
 			margin-bottom: 15px
 
+		+r(767)
+			margin-bottom: 10px
+
 		li, span, b, svg
 			+transition
 
@@ -298,7 +369,7 @@ h3
 			+last
 			display: flex
 			flex-wrap: wrap
-			margin-bottom: 15px
+			margin-bottom: 10px
 
 			+r(1440)
 				margin-bottom: 10px
@@ -313,10 +384,18 @@ h3
 			display: flex
 			align-items: center
 			width: 100%
+			min-width: 220px
 			padding: 5px
 			border-radius: 15px
 			color: $text
 			text-transform: uppercase
+			font-size: 12px
+
+			+r(1200)
+				min-width: 100%
+
+			+r(480)
+				padding: 3px
 
 			&:hover,
 			&:focus
@@ -334,20 +413,22 @@ h3
 			width: auto
 			font-weight: 800
 
+			+r(1750)
+				opacity: 0
+
+			+r(1580)
+				opacity: 1
+
 		span
 			display: flex
 			justify-content: center
 			align-items: center
 			flex-shrink: 0
-			width: 50px
-			height: 50px
+			width: 35px
+			height: 35px
 			margin-right: 10px
 			background-color: $gray
 			border-radius: 15px
-
-			+r(1440)
-				width: 40px
-				height: 40px
 
 			+r(1200)
 				width: 30px
@@ -355,25 +436,28 @@ h3
 
 			+r(480)
 				width: 25px
+				height: 25px
 
 		svg
-			width: 22px
+			width: 60%
 			fill: $text
-
-			+r(1200)
-				width: 18px
 		
 		ul
 			font-size: 12px
-			margin-left: 25px
+			margin-left: 20px
+
+			+r(1750)
+				opacity: 0
+
+			+r(1580)
+				opacity: 1
 
 			li
 				+last
 				margin-bottom: 3px
 
-
 			a
-				padding: 5px 17px
+				padding: 5px
 				text-transform: none
 				font-weight: 800
 
@@ -400,13 +484,9 @@ h3
 			border-left: 4px solid transparent
 			border-right: 4px solid transparent
 			border-top: 7px solid $accent
-			
-		&:hover,
-		&:focus
-			&::before
-				top: 15px
-				border-top: 7px solid transparent
-				border-bottom: 7px solid $accent
+
+			+r(1750)
+				opacity: 0
 
 	&__back
 		+pseudo
@@ -442,6 +522,7 @@ h3
 		flex-wrap: wrap
 		justify-content: space-around
 		padding: 0 8px
+		margin-top: 10px
 
 		+r(992)
 			display: flex
@@ -450,18 +531,14 @@ h3
 			display: flex
 			justify-content: center
 			align-items: center
-			width: 40px
-			height: 40px
+			width: 25px
+			height: 25px
 			background-color: $soc
 			border-radius: 10px
-			box-shadow: 4px 4px 12px 0 rgba(#000, .35)
+			box-shadow: 0 2px 2px 2px rgba(#000, .35)
 			margin-right: 10px
 			overflow: hidden
-
-			+r(480)
-				width: 35px
-				height: 35px
-				margin: 5px 8px !important
+			margin: 5px 15px !important	
 
 			&:nth-child(1),
 			&:nth-child(2),
@@ -478,6 +555,7 @@ h3
 		svg
 			width: 50%
 			fill: #fff
+
 
 .soc
 	position: fixed
@@ -552,6 +630,8 @@ h3
 			z-index: -1
 			opacity: 0
 			visibility: hidden
+			font-family: $fonts--title
+			letter-spacing: 1px
 
 			+r(1200)
 				height: 30px
@@ -615,10 +695,10 @@ h3
 			font-size: 48px
 			font-family: $fonts--title
 
-			+r(1750)
-				font-size: 40px
-
 			+r(1440)
+				font-size: 42px
+
+			+r(1200)
 				font-size: 34px
 
 			+r(992)
@@ -631,10 +711,10 @@ h3
 			letter-spacing: 2.9px
 			font-size: 28px
 
-			+r(1750)
-				font-size: 22px
-
 			+r(1440)
+				font-size: 24px
+
+			+r(1200)
 				font-size: 18px
 
 			+r(992)
@@ -646,8 +726,11 @@ h3
 			color: $blue
 			margin-bottom: 6vh
 
-			+r(1750)
-				font-size: 14px
+			+r(1440)
+				font-size: 16px
+
+			+r(1200)
+				font-size: 13px
 
 			+r(767)
 				margin-bottom: 5vh
@@ -703,10 +786,64 @@ h3
 
 	&__pagination
 		@extend .pagination
+	
+	&__list
+		display: flex
+		flex-direction: row
+		align-items: center
+		padding: 0
+
+		+r(767)
+			justify-content: space-around
+		
+		b
+			opacity: 1 !important
+
+		li
+			margin-bottom: 0
+			margin-right: 25px
+
+			+r(1440)
+				margin-right: 10px
+
+			+r(992)
+				margin-right: 5px
+
+			&:last-child
+				margin-right: 0
+
+		a
+			background-color: $gray
+			padding-right: 15px
+
+			+r(992)
+				padding-right: 0
+
+			&:hover,
+			&:focus
+				background-color: $accent
+				color: #fff
+
+			b
+				transition: all 0s !important
+		
+		svg
+			fill: $accent
 
 
 .hero
 	padding: 5vh 0
+
+	+r(1440)
+		padding: 30px 0
+		min-height: 50vh
+		height: auto
+	
+	+r(767)
+		min-height: auto
+
+	+r(480)
+		padding-top: 40px
 
 	&::before
 		display: none
@@ -720,14 +857,6 @@ h3
 
 		+r(767)
 			margin-bottom: 0
-
-	+r(1440)
-		padding: 30px 0
-		min-height: 50vh
-		height: auto
-	
-	+r(767)
-		min-height: auto
 
 	&__container
 		+between
@@ -754,7 +883,7 @@ h3
 
 		+r(767)
 			width: 100%
-			margin-bottom: 20px
+			margin-bottom: 30px
 			order: 1
 
 		p
@@ -916,6 +1045,7 @@ h3
 			+r(1440)
 				left: 45px
 				width: 100%
+				padding-top: 2%
 
 			+r(992)
 				left: -35px
@@ -953,6 +1083,7 @@ h3
 		+r(767)
 			margin-top: 0
 			padding: 15px
+			order: 3
 			+around
 
 		&::before
@@ -3626,10 +3757,14 @@ h3
 				text-align: center
 
 		h3
-			font-size: 22px
+			font-size: 26px
 			margin-bottom: 10px
 
+			+r(1440)
+				font-size: 22px
+
 			+r(1200)
+				font-size: 20px
 				margin-bottom: 5px
 
 			+r(992)
@@ -3638,11 +3773,20 @@ h3
 			+r(767)
 				font-size: 16px
 
+		p
+			font-size: 18px
+
+			+r(1200)
+				font-size: 16px
+
+			+r(992)
+				font-size: 14px
+
 		&__list
 			+between
 			align-items: flex-start
-			width: 100%
-			margin-left: 90px
+			width: 94%
+			margin-left: 6%
 
 			+r(1440)
 				margin-left: 0

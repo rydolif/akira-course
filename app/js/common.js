@@ -110,26 +110,25 @@ $(function() {
 
 
 //------------------------------acardeon---------------------------
-  $(".block__content").slideUp("slow");
-  $(".active .block__content").slideDown("slow");
+  // $(".block__content").slideUp("slow");
+  // $(".active .block__content").slideDown("slow");
 
-  $(".block").hover(function(){
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $(".block__content").slideUp("slow");
-    }
-    else {
-      $(".active .block__content").slideUp("slow");
-      $(".active").removeClass('active');
-      $(this).addClass('active');
-      $(".active .block__content").slideDown("slow");
-    }
-  });
+  // $(".block").hover(function(){
+  //   if ($(this).hasClass('active')) {
+  //     $(this).removeClass('active');
+  //     $(".block__content").slideUp("slow");
+  //   }
+  //   else {
+  //     $(".active .block__content").slideUp("slow");
+  //     $(".active").removeClass('active');
+  //     $(this).addClass('active');
+  //     $(".active .block__content").slideDown("slow");
+  //   }
+  // });
 
 //------------------------------гамбургер-----------------------------
   $('.nav__hamburger').click(function() {
     $(this).toggleClass('nav__hamburger--active');
-    $(this).toggleClass('nav__hamburger--menu');
     $('.nav').toggleClass('nav--active');
     $('.nav').toggleClass('nav--menu');
   });
@@ -157,6 +156,13 @@ $(function() {
   });
 
 
+  if(document.documentElement.clientWidth <= 1580) {
+    setTimeout(function() {
 
+       $('.nav').addClass('nav--active');
+       $('.nav__hamburger').removeClass('nav__hamburger--active');
+
+    }, 2000);
+  }
   
 });
