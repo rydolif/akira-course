@@ -4257,15 +4257,20 @@ h3
 	&__logo
 		display: block
 		margin-bottom: 25px
+		width: 150px
+
+		+r(1440)
+			width: 130px
+
+		&::before
+			display: none !important
 
 		img
-			max-width: 100%
+			width: 100%
 
 		+r(767)
 			margin: 0 auto 10px
 
-		+r(480)
-			max-width: 100px
 
 	&__copy
 		+between

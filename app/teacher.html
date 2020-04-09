@@ -155,7 +155,7 @@
 
 				<p class="hero__content_text"><b>+ бонус 400 ₽</b> в вашем кабинете уже сейчас!</p>
 
-				<a href="#" class="main__content_btn btn">Получить</a>
+				<a href="#" class="olimpia_open main__content_btn btn">Получить</a>
 			</div>
 
 			<div class="hero__img">
@@ -241,7 +241,7 @@
 					<p>Постоянно с вами на связи whatsapp консультант, а в разделе “Курсы и учебники” – видеоролики по работе в портале</p>
 				</div>
 
-				<a href="#" class="cabinet__btn btn">Использовать бесплатно</a>
+				<a href="#" class="olimpia_open cabinet__btn btn">Использовать бесплатно</a>
 			</div>
 
 		</div>
@@ -363,7 +363,9 @@
 
 			<div class="footer__container container">
 				<div class="footer__item">
-					<img src="img/footer__logo.png" alt="" class="footer__logo">
+					<a href="/" class="footer__logo">
+						<img src="img/footer__logo.png" alt="">
+					</a>
 					<p>International Asossiation</p>
 				</div>
 
@@ -385,7 +387,6 @@
 						<li><a href="#">Наши методики</a></li>
 						<li><a href="#">Он - лайн тренажеры </a></li>
 						<li><a href="#">Он - лайн олимпиады</a></li>
-						<li><a href="#">Международные сертификаты</a></li>
 					</ul>
 				</div>
 
@@ -409,36 +410,15 @@
 		</div>
 	</footer>
 
-	<div class="modal" id="order">
-		<form action="sendmail.php" class="form" method="post">
+	<div class="modal--olimpia modal" id="olimpia">
 
-			<button class="close order_close" type="button">
-				<span></span>
-				<span></span>
-			</button>
-
-			<h3>Оставьте заявку, <br>мы свяжемся с Вами</h3>
-			<input type="hidden" name="subject" value="Узнать подробнее!">
-
-			<div class="">
-				<input type="text" name="name" placeholder="Имя" required>
-			</div>
-			<div class="">
-				<input type="tel" name="phone" placeholder="Телефон" required>
-			</div>
-			<div class="">
-				<button type="submit" class="btn" name="submit">Отправить</button>
-			</div>
-		</form>
-	</div>
-
-	<div class="modal" id="thanks">
-		<button class="close thanks_close" type="button">
+		<button class="modal__close olimpia_close" type="button">
 			<span></span>
 			<span></span>
 		</button>
-		<h3>Спасибо за доверие!</h3>
-		<p>Мы обязательно с вами свяжемся!</p>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script><script src="https://cabinet.akira.education/dealform?id=4692619851b1a64a0223404589a73a47"></script><div id="container4692619851b1a64a0223404589a73a47" style="min-width: 480px; display: block; padding: 30px;"></div>
+		
 	</div>
 
 	<script src="js/scripts.min.js"></script>
