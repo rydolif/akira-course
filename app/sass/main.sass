@@ -159,8 +159,6 @@ h3
 		width: 200px
 	
 	+r(480)
-		position: absolute
-		top: 20px
 		top: 3vh
 		bottom: 3vh
 		max-height: 700px
@@ -230,7 +228,6 @@ h3
 			left: 15px
 
 		+r(480)
-			position: absolute
 			top: 15px
 
 		&:hover
@@ -813,7 +810,8 @@ h3
 				margin-right: 0
 
 		a
-			background-color: $gray
+			background-color: $accent
+			color: #fff
 			padding-right: 15px
 
 			+r(992)
@@ -821,14 +819,20 @@ h3
 
 			&:hover,
 			&:focus
-				background-color: $accent
+				background-color: $hover
 				color: #fff
+
+				span
+					background-color: $hover
 
 			b
 				transition: all 0s !important
+
+		span
+			background-color: $accent
 		
 		svg
-			fill: $accent
+			fill: #fff
 
 
 .hero
