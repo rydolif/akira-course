@@ -1,5 +1,62 @@
 $(function() {
 
+
+//-----------------------------modal--tabs--------------------------
+  $('.tabs__wrap').hide();
+  $('.tabs__wrap:first').show();
+  $('.tabs ul a:first').addClass('active');
+  $('.tabs ul a').click(function(event){
+    event.preventDefault();
+    $('.tabs ul a').removeClass('active');
+    $(this).addClass('active');
+    $('.tabs__wrap').hide();
+    var selectTab = $(this).attr('href');
+    $(selectTab).fadeIn();
+  });
+
+//-----------------------------modal-add-input--------------------------
+  $('#addDynamicExtraFieldButton').click(function(event) {
+    addDynamicExtraField();
+    return false;
+  });
+
+  function addDynamicExtraField() {
+        var div = $('<div/>', {
+            'class': 'DynamicExtraField'
+        }).appendTo($('#DynamicExtraFieldsContainer'));
+
+        var label = $('<label style="font-size: 12px;"/>').html("Текст").appendTo(div);
+        var textarea = $('<input/>', {
+            name: 'DynamicExtraField[]',
+        }).appendTo(div);
+        
+        var label = $('<label style="font-size: 12px;"/>').html("Ссылка").appendTo(div);
+        var textarea = $('<input/>', {
+          name: 'DynamicExtraField[]',
+        }).appendTo(div);
+        
+        var input = $('<input/>', {
+            value: 'Удалить',
+            type: 'button',
+            'class': 'DeleteDynamicExtraField'
+        }).appendTo(div);
+        input.click(function() {
+            $(this).parent().remove();
+        });
+    }
+  //Для удаления первого поля. если оно не динамическое
+  $('.DeleteDynamicExtraField').click(function(event) {
+    $(this).parent().remove();
+    return false;
+  });
+
+//-----------------------------modal-file--------------------------
+  $('input[type="file"]').change(function() {
+    if ($(this).val() != '') $(this).prev().text('Выбрано изображение');
+    else $(this).prev().text('Выберите изображение');
+  });
+
+
 //-----------------------------modal-acardeon-olimp--------------------------
   $(".acardeon__content").slideUp("slow");
   $(".active .acardeon__content").slideDown("slow");
