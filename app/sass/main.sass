@@ -739,6 +739,8 @@ h3
 
 			+r(767)
 				margin: 0 auto 20px
+				display: flex
+				justify-content: center
 
 	&__slider
 		width: 60%
@@ -1085,10 +1087,10 @@ h3
 		z-index: 2
 
 		+r(1450)
-			top: 5%
+			top: 10%
 			left: 40%
-			height: 530px
-			width: 760px
+			height: 430px
+			width: 630px
 
 		+r(1200)
 			top: 15%
@@ -1143,16 +1145,16 @@ h3
 			order: 3
 			+around
 
-		&::before
-			+cover
-			left: 30%
-			top: 0
-			transform: translate(0, -50%)
-			width: 6vw
-			height: 6vw
-			max-width: 100px
-			max-height: 100px
-			background-image: url(../img/check.png)
+		// &::before
+		// 	+cover
+		// 	left: 30%
+		// 	top: 0
+		// 	transform: translate(0, -50%)
+		// 	width: 6vw
+		// 	height: 6vw
+		// 	max-width: 100px
+		// 	max-height: 100px
+		// 	background-image: url(../img/check.png)
 
 		&_item
 			+last
