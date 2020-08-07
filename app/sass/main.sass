@@ -581,7 +581,7 @@ h3
 		width: 50px
 		height: 50px
 		margin-bottom: 2.5vh
-		background-color: $soc
+		background-color: $accent
 		border-radius: 10px
 		box-shadow: 4px 4px 12px 0 rgba(#000, .35)
 
@@ -876,7 +876,6 @@ h3
 		position: relative
 		width: 50%
 		padding-top: 30px
-		// padding-left: 50px
 		margin-bottom: 10vh
 		line-height: 1.6
 		z-index: 2
@@ -919,11 +918,11 @@ h3
 
 		b
 			text-transform: uppercase
-			color: $hover
+			color: $accent
 			font-weight: 800
 
 		span
-			color: $hover
+			color: $accent
 
 		ul
 			margin-bottom: 35px
@@ -1000,7 +999,7 @@ h3
 		+r(767)
 			height: auto
 			width: 100%
-			background: linear-gradient(90deg, rgba(144,71,192,1) 0%, rgba(#9247c3,1) 100%)
+			background: linear-gradient(90deg, rgba($accent,1) 0%, rgba($accent,1) 100%)
 			border-radius: 30px
 			border-top-left-radius: 70px
 			border-bottom-right-radius: 70px
@@ -1013,7 +1012,7 @@ h3
 			display: block
 			width: 47vw
 			background-color: $accent
-			background: linear-gradient(90deg, rgba(144,71,192,1) 0%, rgba(#9247c3,1) 100%)
+			background: linear-gradient(90deg, rgba($accent,1) 0%, rgba($accent,1) 100%)
 			height: 100%
 			border-top-left-radius: 180px
 			border-bottom-left-radius: 30px
@@ -1187,21 +1186,22 @@ h3
 		position: relative
 
 		h3
-			font-size: 60px
+			font-size: 44px
 			font-weight: 400
 			line-height: 1
 			color: $title
 			margin-bottom: 10px
 			color: $text
+			text-transform: none
 
 			+r(1200)
-				font-size: 44px
-
-			+r(992)
 				font-size: 36px
 
+			+r(992)
+				font-size: 26px
+
 			+r(480)
-				font-size: 30px
+				font-size: 22px
 
 			b
 				font-weight: 400
@@ -1212,6 +1212,9 @@ h3
 
 			+r(767)
 				width: 49%
+
+			+r(480)
+				width: 100%
 
 	&--course
 		position: relative
@@ -3278,7 +3281,9 @@ h3
 			width: 70px
 			height: 70px
 			border-radius: 50%
-			background-image: url(../img/play.png)
+			background-image: url(../img/play.svg)
+			background-size: 30%
+			background-color: $accent
 
 			+r(767)
 				width: 50px
@@ -4386,7 +4391,7 @@ h3
 		align-items: center
 		width: 30px !important
 		height: 30px !important
-		background-color: $soc
+		background-color: $accent
 		border-radius: 10px
 		box-shadow: 4px 4px 12px 0 rgba(#000, .35)
 		cursor: pointer
